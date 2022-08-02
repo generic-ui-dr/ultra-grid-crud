@@ -1,0 +1,14 @@
+<input [type]='type'
+	   [value]='inputValue'
+	   [disabled]='disabled'
+	   (change)='onChange($event)'
+	   (keyup)='onChange($event)'
+	   [class.ultra-invalid]="inputInvalid"
+	   required>
+<label>
+	<ng-content></ng-content>
+</label>
+<span [class.ultra-invalid]="inputInvalid"
+	  class='bar'>
+<span class='highlight'></span>
+</span>

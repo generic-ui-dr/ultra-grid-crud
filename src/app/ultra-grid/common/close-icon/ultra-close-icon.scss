@@ -1,0 +1,44 @@
+$icon-color: #aaa;
+$icon-color-hover: #464646;
+
+.ultra-close-icon-wrapper {
+	position: relative;
+	height: 100%;
+	width: 100%;
+
+	.ultra-close-icon {
+		cursor: pointer;
+		height: 30%;
+		position: absolute;
+		right: 50%;
+		top: 50%;
+		width: 30%;
+		transform: translateX(-50%) translateY(-50%);
+
+		&::before,
+		&::after {
+			background-color: $icon-color;
+			content: ' ';
+			height: 16px;
+			left: 7px;
+			position: absolute;
+			width: 2px;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+
+		&:hover {
+
+			&::before,
+			&::after {
+				background-color: $icon-color-hover;
+			}
+		}
+	}
+}

@@ -1,0 +1,77 @@
+$color: #2196F3;
+$input-invalid: red;
+
+.ultra-input {
+	position: relative;
+	width: 100%;
+	margin-bottom: 0.5rem;
+	margin-top: 0.5rem;
+
+	input {
+		border: none;
+		border-bottom: 1px solid black;
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+		background: transparent;
+		padding: 1.25rem 1.25rem 0 0.25rem;
+
+		&:focus {
+			outline: none;
+		}
+
+		&:focus ~ label,
+		&:valid ~ label {
+			margin-top: -0.5rem;
+			left: 0;
+			font-size: 0.875rem;
+			line-height: 1.25rem;
+			color: $color;
+		}
+
+		&:focus ~ .bar .highlight {
+			transform: scale(1);
+		}
+
+		&.ultra-invalid {
+			border-bottom-color: $input-invalid;
+
+			&:focus ~ label,
+			~ label {
+				color: $input-invalid;
+			}
+		}
+	}
+
+	label {
+		transition: all 0.3s;
+		position: absolute;
+		pointer-events: none;
+		left: 0.125rem;
+		top: 0.625rem;
+	}
+
+	.bar {
+		position: relative;
+		display: block;
+
+		.highlight {
+			position: absolute;
+			width: 100%;
+			transform: scale(0);
+			transition: all;
+			transition-duration: 500ms;
+			bottom: 0;
+			left: 0;
+			height: 0.125rem;
+			background: $color;
+		}
+
+		&.ultra-invalid {
+
+			.highlight {
+				background: $input-invalid;
+			}
+		}
+	}
+}
